@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>罗志文 | TikTok E-commerce & AI Specialist</title>
+    <style>
+        /* 新粗犷主义潮流风格 - 纯净原图版 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'PingFang SC', -apple-system, sans-serif;
+        }
+
+        body {
+            background-color: #f4f3ef; /* 复古米白背景 */
+            color: #000000;
+            padding: 20px;
+            line-height: 1.8;
+            overflow-x: hidden;
+        }
+
+        /* 标志性的胶囊药丸导航栏 */
+        header {
+            max-width: 700px;
+            margin: 20px auto 50px auto;
+            background: #ffffff;
+            border: 3px solid #000000;
+            border-radius: 50px;
+            box-shadow: 4px 4px 0px #000000;
+            padding: 10px 30px;
+            position: sticky;
+            top: 20px;
+            z-index: 1000;
+        }
+
+        .nav-container, .nav-links {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            list-style: none;
+            width: 100%;
+        }
+
+        .nav-links li a {
+            text-decoration: none;
+            color: #000000;
+            font-weight: 700;
+            font-size: 15px;
+            padding: 6px 16px;
+            border-radius: 20px;
+            transition: all 0.2s;
+        }
+
+        .nav-links li a:hover {
+            background: #ffc2df; /* 悬浮粉色 */
+        }
+
+        .container {
+            max-width: 1050px;
+            margin: 0 auto;
+        }
+
+        /* Hero 主视觉区 */
+        .hero-section {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 40px;
+            margin-bottom: 80px;
+            padding-top: 20px;
+        }
+
+        .hero-text { flex: 1.2; }
+
+        .intro-title {
+            font-size: 42px;
+            font-weight: 900;
+            line-height: 1.4;
+            margin-bottom: 10px;
+        }
+
+        /* 标志性艺术风格块 */
+        .highlight-pink {
+            background: #ffc2df;
+            padding: 2px 12px;
+            border: 3px solid #000000;
+            display: inline-block;
+            transform: rotate(-1deg);
+            margin-right: 5px;
+            box-shadow: 4px 4px 0px #000000;
+        }
+
+        .highlight-blue {
+            background: #a3c7ff;
+            padding: 2px 12px;
+            border: 3px solid #000000;
+            display: inline-block;
+            transform: rotate(1deg);
+            box-shadow: 4px 4px 0px #000000;
+            font-size: 16px;
+        }
+
+        .hero-p {
+            font-size: 16px;
+            color: #333333;
+            margin-top: 25px;
+            font-weight: 500;
+        }
+
+        /* 头像框 */
+        .hero-avatar-box {
+            flex: 0.8;
+            display: flex;
+            justify-content: center;
+        }
+
+        .avatar-card {
+            width: 320px;
+            height: 380px;
+            background: #ffffff;
+            border: 3px solid #000000;
+            border-radius: 30px;
+            box-shadow: 8px 8px 0px #000000;
+            overflow: hidden;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* 完美容纳拍立得原图 */
+        .avatar-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center 20%;
+        }
+
+        .btn-more {
+            display: inline-block;
+            margin-top: 30px;
+            background: #111111;
+            color: #ffffff;
+            padding: 12px 28px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 14px;
+            border-radius: 10px;
+            border: 3px solid #000000;
+            box-shadow: 4px 4px 0px #a3c7ff;
+            transition: all 0.2s;
+        }
+
+        .btn-more:hover {
+            transform: translate(-2px, -2px);
+            box-shadow: 6px 6px 0px #a3c7ff;
+        }
+
+        /* 通用板块样式 */
+        .section {
+            margin-bottom: 80px;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .section-title-box {
+            margin-bottom: 35px;
+        }
+
+        .section-title {
+            font-size: 24px;
+            font-weight: 900;
+            background: #fff;
+            padding: 5px 15px;
+            border: 3px solid #000000;
+            display: inline-block;
+            box-shadow: 4px 4px 0px #000000;
+        }
+
+        /* 核心优势板块布局 */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        .about-text {
+            background: #ffffff;
+            border: 3px solid #000000;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 5px 5px 0px #000000;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .about-text h3 {
+            font-size: 22px;
+            font-weight: 800;
+            margin-bottom: 15px;
+        }
+
+        .about-text p {
+            margin-bottom: 15px;
+            color: #222222;
+        }
+
+        /* 核心技能卡片 */
+        .skill-card {
+            background: #ffe699;
+            border: 3px solid #000000;
+            padding: 20px;
+            border-radius: 16px;
+            margin-bottom: 20px;
+            box-shadow: 4px 4px 0px #000000;
+        }
+
+        .skill-card h4 {
+            font-size: 18px;
+            font-weight: 800;
+            margin-bottom: 8px;
+        }
+
+        .skill-card p {
+            font-size: 14px;
+            color: #333333;
+        }
+
+        /* 兴趣爱好网格布局 */
+        .hobby-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            align-items: start;
+        }
+
+        .hobby-card {
+            background: #ffffff;
+            border: 3px solid #000000;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 5px 5px 0px #000000;
+            position: relative;
+            height: 250px;
+        }
+
+        .hobby-card .tag {
+            font-size: 12px;
+            font-weight: 800;
+            background: #a3c7ff;
+            border: 2px solid #000000;
+            padding: 2px 10px;
+            border-radius: 6px;
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+
+        .hobby-card h3 {
+            font-size: 20px;
+            font-weight: 800;
+            margin-bottom: 10px;
+        }
+
+        .hobby-card p {
+            font-size: 14px;
+            color: #444444;
+        }
+
+        /* ================= 无畏契约 3D 翻转卡片样式 ================= */
+        .valorant-flip-container {
+            perspective: 1000px;
+            height: 250px;
+            transition: height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .valorant-flip-container:hover {
+            height: 400px; /* 根据新的JPG原图比例稍微伸长 */
+        }
+
+        .flip-card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            text-align: left;
+            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+            transform-style: preserve-3d;
+        }
+
+        .valorant-flip-container:hover .flip-card-inner {
+            transform: rotateY(180deg);
+        }
+
+        .card-front, .card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            border-radius: 20px;
+            border: 3px solid #000000;
+            box-shadow: 5px 5px 0px #000000;
+        }
+
+        .card-front {
+            background-color: #ffffff;
+            padding: 30px;
+        }
+
+        .card-back {
+            background-color: #ffffff;
+            transform: rotateY(180deg);
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* 完美承载您发来的无畏契约JPG原图 */
+        .card-back img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center center;
+        }
+        /* ============================================================= */
+
+        /* 联系方式模块 */
+        .contact-box {
+            background: #111111;
+            color: #ffffff;
+            padding: 50px 30px;
+            border-radius: 24px;
+            border: 3px solid #000000;
+            box-shadow: 6px 6px 0px #ffc2df;
+            text-align: center;
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .contact-box h2 {
+            font-size: 32px;
+            font-weight: 900;
+            margin-bottom: 15px;
+        }
+
+        .contact-box p {
+            color: #aaaaaa;
+            margin-bottom: 35px;
+        }
+
+        .contact-channels {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .channel-item {
+            background: #ffffff;
+            border: 3px solid #000000;
+            padding: 15px 30px;
+            border-radius: 16px;
+            min-width: 260px;
+            box-shadow: 4px 4px 0px #a3c7ff;
+            text-align: left;
+            cursor: pointer;
+            position: relative;
+            user-select: none;
+            transition: transform 0.1s ease, box-shadow 0.1s ease;
+        }
+
+        .channel-item:hover {
+            transform: translate(-2px, -2px);
+            box-shadow: 6px 6px 0px #a3c7ff;
+        }
+
+        .channel-item:active {
+            transform: translate(4px, 4px);
+            box-shadow: 0px 0px 0px #a3c7ff;
+        }
+
+        .channel-title {
+            font-size: 12px;
+            color: #666666;
+            font-weight: 800;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .channel-title::after {
+            content: '点击复制';
+            font-size: 10px;
+            color: #999999;
+            background: #f0f0f0;
+            padding: 1px 6px;
+            border: 1px solid #000;
+            border-radius: 4px;
+        }
+
+        .channel-value {
+            font-size: 18px;
+            font-weight: 800;
+            color: #000000;
+            word-break: break-all;
+        }
+
+        .copy-toast {
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%) scale(0.8);
+            background: #ffe699;
+            color: #000000;
+            border: 2px solid #000000;
+            font-weight: 800;
+            font-size: 12px;
+            padding: 4px 12px;
+            border-radius: 6px;
+            box-shadow: 3px 3px 0px #000000;
+            opacity: 0;
+            pointer-events: none;
+            transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            z-index: 10;
+        }
+
+        .copy-toast.show {
+            opacity: 1;
+            top: -35px;
+            transform: translateX(-50%) scale(1);
+        }
+
+        footer {
+            padding: 40px 0;
+            text-align: center;
+            font-size: 14px;
+            font-weight: 700;
+            color: #666666;
+        }
+
+        @media (max-width: 768px) {
+            .hero-section {
+                flex-direction: column-reverse;
+                text-align: center;
+            }
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+            .nav-links {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 顶部的胶囊药丸导航栏 -->
+    <header>
+        <nav class="nav-container">
+            <ul class="nav-links">
+                <li><a href="#">首页</a></li>
+                <li><a href="#about">关于我与核心优势</a></li>
+                <li><a href="#interests">生活与兴趣</a></li>
+                <li><a href="#contact">联系合作 ✉️</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        
+        <!-- Hero 主视觉区 -->
+        <section class="hero-section">
+            <div class="hero-text">
+                <div class="intro-title">我是</div>
+                <div class="intro-title">
+                    <div class="highlight-pink">罗志文</div>,
+                </div>
+                <div class="intro-title">TikTok E-commerce</div>
+                <div class="intro-title">AI Specialist</div>
+                <div class="intro-title" style="margin-top: 15px;">
+                    <div class="highlight-blue">🚀 现居杭州 (温州人)</div>
+                </div>
+
+                <p class="hero-p">
+                    电子商务专业，具备<b>半年的 TikTok 海外直播带货经验</b>，在职期间曾<b>斩获公司单场最高销售额纪录</b>。我拥有强大的执行力与卓越的学习能力，立志长期扎根于电商领域，并通过前沿 AI 工具构建属于自己的高效工作流。
+                </p>
+
+                <a href="#contact" class="btn-more">联系我聊聊 | Get In Touch</a>
+            </div>
+            
+            <!-- 头像框：精准加载您发送的 拍立得原图 -->
+            <div class="hero-avatar-box">
+                <div class="avatar-card">
+                    <img src="头像.jpg" alt="罗志文的实拍头像">
+                </div>
+            </div>
+        </section>
+
+        <!-- 关于我 & 核心优势 -->
+        <section id="about" class="section">
+            <div class="section-title-box">
+                <div class="section-title">Core Competencies</div>
+            </div>
+            <div class="about-grid">
+                <div class="about-text">
+                    <h3>工作流与未来愿景</h3>
+                    <p>我来自温州，天生敏锐。选择来杭州就是为了长期扎根电商赛道。</p>
+                    <p>我拒绝成为传统的“螺丝钉”，未来将持续融合<b>强执行力</b>与 <b>AI 技术优势</b>，探索自驱型跨境电商工作流。</p>
+                </div>
+                <div>
+                    <div class="skill-card" style="background: #a3c7ff;">
+                        <h4>🎙️ TikTok 销售实战 & 单场销冠</h4>
+                        <p>半年实操，凭敏锐的现场转粉及转化能力，一举<b>达成公司单场最高销售额纪录</b>。</p>
+                    </div>
+                    <div class="skill-card">
+                        <h4>⚡ 强执行力 × 高自驱学习力</h4>
+                        <p>对新工具、新玩法的学习速度快。深度探索 AI 进行市场趋势检索、文案本地化。 CET-6地道美音。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 兴趣爱好 -->
+        <section id="interests" class="section">
+            <div class="section-title-box">
+                <div class="section-title">Life & Interests</div>
+            </div>
+            <div class="hobby-grid">
+                
+                <!-- 无畏契约卡片：反转后展示您刚刚发送的原图 -->
+                <div class="valorant-flip-container">
+                    <div class="flip-card-inner">
+                        <div class="card-front">
+                            <span class="tag">FPS 竞技</span>
+                            <h3>🕹️ Valorant (无畏契约)</h3>
+                            <p>战术、枪法与心态的终极考验。作为一名硬核玩家，直播与游戏一样，需要绝对专注的复盘思维和高压下的冷静决策。</p>
+                        </div>
+                        <div class="card-back">
+                            <img src="无畏契约.jpg" alt="无畏契约实拍原图">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hobby-card">
+                    <span class="tag" style="background: #ffc2df;">团队运动</span>
+                    <h3>🏀 篮球 (Basketball)</h3>
+                    <p>球场对抗让我保持竞争状态，也更懂团队配合与传好每一个助攻。职场如球场，只有好配合才能有好成绩。</p>
+                </div>
+                
+                <div class="hobby-card">
+                    <span class="tag" style="background: #ffe699;">自我管理</span>
+                    <h3>🏋️‍♂️ 健身 (Bodybuilding)</h3>
+                    <p>雷打不动的习惯，享受健身。全是日复一日的底层自律与重塑过程。</p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 联系方式 -->
+        <section id="contact" class="section">
+            <div class="contact-box">
+                <h2>期待与您的团队产生火花</h2>
+                <p>无论是业务开拓、岗位招聘还是 AI 探讨，随时点击下方卡片复制：</p>
+                
+                <div class="contact-channels">
+                    <div class="channel-item" onclick="copyContact('1140799719@qq.com', this)">
+                        <div class="copy-toast">已复制！👏</div>
+                        <div class="channel-title">📧 Email Address</div>
+                        <div class="channel-value">1140799719@qq.com</div>
+                    </div>
+                    
+                    <div class="channel-item" onclick="copyContact('Wesssley_0712', this)">
+                        <div class="copy-toast">已复制！👏</div>
+                        <div class="channel-title">💬 WeChat ID</div>
+                        <div class="channel-value" style="color: #2563eb;">Wesssley_0712</div>
+                    </div>
+                </div>
+
+                <p style="margin-top: 35px; font-size: 14px; color: #888888;">坐标 浙江·杭州 | 欢迎线下面试或喝咖啡 ☕</p>
+            </div>
+        </section>
+
+        <footer>
+            <p>&copy; 2026 Zhiwen Luo. Designed for Next-Gen E-commerce.</p>
+        </footer>
+
+    </div>
+
+    <!-- 纯净复制脚本 -->
+    <script>
+        function copyContact(text, element) {
+            navigator.clipboard.writeText(text).then(() => {
+                const toast = element.querySelector('.copy-toast');
+                toast.classList.add('show');
+                setTimeout(() => {
+                    toast.classList.remove('show');
+                }, 1500);
+            }).catch(err => {
+                console.error('复制失败: ', err);
+            });
+        }
+    </script>
+
+</body>
+</html>
